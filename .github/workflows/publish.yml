@@ -25,10 +25,10 @@ jobs:
         run: |
           for file in $(find docs/ -type f -name '*.md'); do
             echo "> Sync $file";
-            ./mark -u $CONFLUENCE_USERNAME -p $CONFLUENCE_PASSWORD -b $CONFLUENCE_API -f $file || exit 1;
+            ./mark -u $MARK_USER -p $MARK_PASS -b $MARK_URL -f $file || exit 1;
             echo;
           done
         env:
-          CONFLUENCE_API_TOKEN: ${{ secrets.CONFLUENCE_API_TOKEN }}
-          CONFLUENCE_API: ${{ secrets.CONFLUENCE_API }}
-          CONFLUENCE_API_USER: ${{ secrets.CONFLUENCE_API_USER }}
+          MARK_PASS: ${{ secrets.CONFLUENCE_API_TOKEN }}
+          MARK_URL: ${{ secrets.CONFLUENCE_API }}
+          MARK_USER: ${{ secrets.CONFLUENCE_API_USER }}
