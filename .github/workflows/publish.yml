@@ -22,7 +22,7 @@ jobs:
             go build
 
       - name: Publish to Confluence
-        run: ./mark -c config.toml
+        run: ./mark -c config.toml -f "docs/*.md"
         env:
           CONFLUENCE_PASSWORD: ${{ secrets.CONFLUENCE_API_TOKEN }}
           CONFLUENCE_API: ${{ secrets.CONFLUENCE_API }}
