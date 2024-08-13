@@ -17,12 +17,8 @@ jobs:
         with:
           go-version: '1.20'
 
-      - name: Install Mark
-        run: |
-            go build
-         
       - name: Publish to Confluence
-        run: mark -config=mark.toml
+        run: mark -config=config.toml
         env:
           CONFLUENCE_PASSWORD: ${{ secrets.CONFLUENCE_API_TOKEN }}
           CONFLUENCE_API: ${{ secrets.CONFLUENCE_API }}
