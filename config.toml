@@ -1,0 +1,5 @@
+username = "$CONFLUENCE_USERNAME"
+password = "$CONFLUENCE_PASSWORD"
+base-url = "$CONFLUENCE_API"
+title-from-h1 = true
+drop-h1 = true
