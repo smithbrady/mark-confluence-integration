@@ -24,6 +24,6 @@ jobs:
       - name: Publish to Confluence
         run: ./mark -c config.toml -f "docs/*.md"
         env:
-          CONFLUENCE_PASSWORD: ${{ secrets.CONFLUENCE_API_TOKEN }}
+          CONFLUENCE_API_TOKEN: ${{ secrets.CONFLUENCE_API_TOKEN }}
           CONFLUENCE_API: ${{ secrets.CONFLUENCE_API }}
-          CONFLUENCE_USERNAME: ${{ secrets.CONFLUENCE_API_USER }}
+          CONFLUENCE_API_USER: ${{ secrets.CONFLUENCE_API_USER }}
