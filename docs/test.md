@@ -18,13 +18,6 @@ Mark reads your markdown file, creates a Confluence page if it's not found by it
 ### Mermaid diagrams!
 Mark can render Mermaid charts via [mermaid.go](https://github.com/dreampuf/mermaid.go)  
 
-```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-```
 ### Info Panels!
 > Info
 > 
