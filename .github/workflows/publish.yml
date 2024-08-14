@@ -9,6 +9,7 @@ env:
   GO_VERSION: "~1.22.6"
       
 jobs:
+  # Builds mark binary
   build:
     name: build
     runs-on: ubuntu-latest
@@ -26,6 +27,7 @@ jobs:
       run: |
         make build
 
+  # Pushes any markdown files in found in docs/ to the Confluence API      
   publish:
     name: Publish  
     runs-on: ubuntu-latest
@@ -34,7 +36,7 @@ jobs:
       run: |
         for file in $(find docs/ -type f -name '*.md'); do
           echo "> Sync $file";
-          ./mark -u $MARK_USER -p $MARK_PASS -b $MARK_URL -f $file --mermaid-provider mermaid-go || exit 1;
+          ./mark -u $MARK_USER -p $MARK_PASS -b $MARK_URL -f $file --mermaid-provider mermaid-go --mermaid-scale .75 || exit 1;
           echo;
         done
       env:
