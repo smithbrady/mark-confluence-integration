@@ -25,6 +25,16 @@ graph TD;
     B-->D;
     C-->D;
 ```
+### Info Panels!
+> Info
+> 
+> Standard Markdown block quotes are converted to Confluence Info/Warn/Note box by Mark when the following conditions are met:
+
+1. The BlockQuote is on the root level of the document (not nested).
+2. The first line of the BlockQuote contains one of the following patterns Info/Warn/Note.
+
+In any other case the default behaviour will be resumed and html <blockquote> tag will be used
+
 
 ### Code blocks!
 
