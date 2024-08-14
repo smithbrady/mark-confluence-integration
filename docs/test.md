@@ -16,13 +16,28 @@ Mark reads your markdown file, creates a Confluence page if it's not found by it
 ## Check out what it can do
 
 ### Mermaid diagrams!
-Mark can render Mermaid charts  
+Mark can render Mermaid charts via [mermaid go](https://github.com/dreampuf/mermaid.go) 
 
-### Info Panels!
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
+```mermaid
+sequenceDiagram
+    participant A as Alice
+    participant B as Bob
+    A->>B: Hello Bob, how are you?
+    B-->>A: I am good thanks!
+```
 
 ### Code blocks!
 
 ```bash
 command-to-run
 ```
+### Info Panels!
 
