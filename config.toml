@@ -1,4 +1,0 @@
-username = "${CONFLUENCE_API_USER}"
-password = "${CONFLUENCE_API_TOKEN}"
-base-url = "https://lambdalabs.atlassian.net/wiki"
-space = "OC"
