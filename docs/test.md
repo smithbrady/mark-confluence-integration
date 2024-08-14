@@ -15,12 +15,7 @@ Mark reads your markdown file, creates a Confluence page if it's not found by it
 
 ## Check out what it can do
 
-Code blocks!
-
-```bash
-command-to-run
-```
-Mermaid diagrams!
+### Mermaid diagrams!
 
 ```mermaid
 graph TD;
@@ -29,3 +24,10 @@ graph TD;
     B-->D;
     C-->D;
 ```
+
+### Code blocks!
+
+```bash
+command-to-run
+```
+
