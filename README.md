@@ -1,19 +1,11 @@
 # Mark
 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-44-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-
 Mark — a tool for syncing your markdown documentation with Atlassian Confluence
 pages.
 
 Read the blog post discussing the tool — <https://samizdat.dev/use-markdown-for-confluence/>
 
-This is very useful if you store documentation to your software in a Git
-repository and don't want to do an extra job of updating Confluence page using
-a tinymce wysiwyg enterprise core editor which always breaks everything.
-
-Mark does the same but in a different way. Mark reads your markdown file, creates a Confluence page
+Mark reads your markdown file, creates a Confluence page
 if it's not found by its name, uploads attachments, translates Markdown into HTML and updates the
 contents of the page via REST API. It's like you don't even need to create sections/pages in your
 Confluence anymore, just use them in your Markdown documentation.
