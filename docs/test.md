@@ -2,7 +2,7 @@
 <!-- Parent: Testing Mark -->
 <!-- Title: Test -->
 
-<!-- Include: templates/disclaimer.md -->
+<!-- Include: .templates/disclaimer.md -->
 
 
 # Project Documentation
