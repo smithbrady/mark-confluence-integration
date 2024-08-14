@@ -25,7 +25,7 @@ jobs:
         run: |
           for file in $(find docs/ -type f -name '*.md'); do
             echo "> Sync $file";
-            ./mark -u $MARK_USER -p $MARK_PASS -b $MARK_URL -f $file --mermaid-provider mermaid-go || exit 1;
+            ./mark -u $MARK_USER -p $MARK_PASS -b $MARK_URL -f $file -k true --mermaid-provider mermaid-go || exit 1;
             echo;
           done
         env:
