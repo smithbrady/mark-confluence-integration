@@ -5,30 +5,39 @@ on:
     branches:
       - main
 
+env:
+  GO_VERSION: "~1.22.6"
+      
 jobs:
-  publish:
+  build:
+    name: build
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
+    - name: Check out code into the Go module directory
+      uses: actions/checkout@v4
 
-      - name: Set up Go
-        uses: actions/setup-go@v2
-        with:
-          go-version: '1.22.5'
+    - name: Set up Go 1.x
+      uses: actions/setup-go@v5
+      with:
+        go-version: ${{ env.GO_VERSION }}
+      id: go
 
-      - name: Build Mark
-        run: |
-            go build
+    - name: Build mark
+      run: |
+        make build
 
-      - name: Publish to Confluence
-        run: |
-          for file in $(find docs/ -type f -name '*.md'); do
-            echo "> Sync $file";
-            ./mark -u $MARK_USER -p $MARK_PASS -b $MARK_URL -f $file --mermaid-provider mermaid-go || exit 1;
-            echo;
-          done
-        env:
+  publish:
+    name: Publish  
+    runs-on: ubuntu-latest
+    steps:
+    - name: Publish to Confluence
+      run: |
+        for file in $(find docs/ -type f -name '*.md'); do
+          echo "> Sync $file";
+          ./mark -u $MARK_USER -p $MARK_PASS -b $MARK_URL -f $file --mermaid-provider mermaid-go || exit 1;
+          echo;
+        done
+      env:
           MARK_PASS: ${{ secrets.CONFLUENCE_API_TOKEN }}
           MARK_URL: ${{ secrets.CONFLUENCE_API }}
           MARK_USER: ${{ secrets.CONFLUENCE_API_USER }}
