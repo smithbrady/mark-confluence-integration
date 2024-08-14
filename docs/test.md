@@ -5,26 +5,27 @@
 <!-- Include: ../templates/disclaimer.md -->
 
 
-# Project Documentation
+# Testing Mark
 
-Welcome to the documentation for the project.
+This is the page for testing the markdown to confluence features of Mark
 
 ## Overview
 
-This document provides an overview of the project.
+Mark reads your markdown file, creates a Confluence page if it's not found by its name, uploads attachments, translates Markdown into HTML and updates the contents of the page via REST API. It's like you don't even need to create sections/pages in your Confluence anymore, just use them in your Markdown documentation.
 
-## Installation
+## Check out what it can do
 
-Steps to install the project:
-
-1. Clone the repository.
-2. Run the installer.
-
-## Usage
-
-How to use the project:
+Code blocks!
 
 ```bash
 command-to-run
 ```
-The end
+Mermaid diagrams!
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
